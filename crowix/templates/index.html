@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<html>
+	 {% include 'head.html' %}
+<body>
+<!---strat-banner---->
+<div class="banner">			
+	 {% include 'header.html' %}
+	 <div class="container">
+		 {% include 'bannerhead.html' %}	
+	 </div>
+</div>
+<!---//End-banner---->
+<div class="content">
+	 <div class="container">
+		 <div class="banner-links">
+			 <ul>
+				 <li id="a1" class="active"><a>Artical1</a></li>
+				 <li id="a2"><a>Artical2</a></li>
+				 <li id="a3"><a>Artical3</a></li>
+				 <div class="clearfix"></div>
+			 </ul>
+		 </div>
+		 <div class="content-grids">
+			 <div class="col-md-9 content-main">
+			 	<div id="arti1">
+			 		{% autoescape off %}
+			 		{% for he in artical1 %}
+			 			<h1>{{  he.title }}</h1>
+			 			<p>{{  he.content }}</p>
+			 			<hr>
+			 		{% endfor %}
+			 	</div>
+			 	<div id="arti2">
+			 		{% for he in artical2 %}
+			 			<h1>{{  he.title }}</h1>
+			 			<p>{{  he.content }}</p>
+			 			<hr>
+			 		{% endfor %}
+			 	</div>
+			 	<div id="arti3">
+			 		{% for he in artical3 %}
+			 			<h1>{{  he.title }}</h1>
+			 			<p>{{  he.content }}</p>
+			 			<hr>
+			 		{% endfor %}
+			 		{% endautoescape %}
+			 	</div>
+			 </div>
+			 
+			 <div class="col-md-3 content-main-right">
+		 		 <div class="categories">
+			 		<h3>PRODUCTS</h3>
+			 		<ul>
+			 		<li id="no1"><a>NO.1 ChiliStemCutter</a></li>
+			 		<li id="no2"><a>NO.2 ChiliStemCutter</a></li>
+			 		<li id="no3"><a>NO.3 ChiliStemCutter</a></li>
+			 		<li id="no4"><a>NO.4 ChiliStemCutter</a></li>
+			 		<li><a>NO.5 ChiliStemCutter</a></li>
+			 		<li><a>NO.6 ChiliStemCutter</a></li>
+			 		<li><a>NO.7 ChiliStemCutter</a></li>
+			 		</ul>
+		 		 </div>
+				 <div class="categories">
+					 <h3>CATEGORIES</h3>
+					 <li><a href="#">Donec quis dui at dolor tempor</a></li>
+					 <li><a href="#">Vestibulum commodo felis quis tort</a></li>
+					 <li><a href="#">Fusce pellentesque suscipit</a></li>
+				 </div>
+				 <div class="archives">
+					 <h3>ARCHIVES</h3>
+					 <li><a href="#">July 2014</a></li>
+					 <li><a href="#">June 2014</a></li>
+					 <li><a href="#">May 2014</a></li>
+				 </div>
+			 </div>
+			 <div class="clearfix"></div>
+		 </div>
+	 </div>
+</div>
+<!--fotter-->
+<div class="fotter">
+	 <div class="container">
+		 <div class="col-md-4 fotter-info">
+			 <h3>INTEGER VITAE LIBERO</h3>
+			 <p>Raesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. </p>
+			 <p>Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus. Phasellus ultrices nulla quis nibh. Quisque a lectus. </p>
+		 </div>
+		 <div class="col-md-4 fotter-list">
+			 <h3>VESTIBULUM COMMO</h3>
+			 <ul>
+			 <li><a href="#">Ut alliquam solicitudin</a></li>
+			 <li><a href="#">Neque id cursus faucibus</a></li>
+			 <li><a href="#">Raesent dapibus neque id cursus</a></li>
+			 </ul>
+		 </div>
+		 <div class="col-md-4 fotter-media">
+				<h3>FOLLOW US ON....</h3>
+				 <div class="social-icons">
+				 <a href="#"><span class="fb"> </span></a>
+				 <a href="#"><span class="twt"> </span></a>
+				 <a href="#"><span class="in"> </span></a>				 			 
+			    </div>
+		 </div>
+		 <div class="clearfix"></div>
+	 </div>
+</div>
+<!---fotter/-->
+{% include 'rightreserved.html' %}
+</div>
+<!---->
+<script type="text/javascript">
+		$(document).ready(function() {
+			$("#arti1").show();
+			$("#arti2").hide();
+			$("#arti3").hide();
+				/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+				*/
+		$("#a1").click(function(){
+			$("#a1").addClass("active");
+			$("#a2").removeClass("active");
+			$("#a3").removeClass("active");
+			$("#arti1").show();
+			$("#arti2").hide();
+			$("#arti3").hide();
+		})
+		$("#a2").click(function(){
+			$("#a1").removeClass("active");
+			$("#a2").addClass("active");
+			$("#a3").removeClass("active");
+			$("#arti1").hide();
+			$("#arti2").show();
+			$("#arti3").hide();
+		})
+		$("#a3").click(function(){
+			$("#a1").removeClass("active");
+			$("#a2").removeClass("active");
+			$("#a3").addClass("active");
+			$("#arti1").hide();
+			$("#arti2").hide();
+			$("#arti3").show();
+		})
+		$().UItoTop({ easingType: 'easeOutQuart' });
+});
+</script>
+
+
+<a href="#to-top" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+
+
+</body>
+</html>

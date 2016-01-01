@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html>
+	 {% include 'head.html' %}
+<body>
+<!---strat-banner---->
+<div class="banner">				
+	 {% include 'header.html' %}
+	 <div class="container">
+		 {% include 'bannerhead.html' %}	
+	 </div>
+</div>
+<!---//End-banner---->
+<div class="contact">
+	 <div class="container">
+		 <div class="col-lg-6 col-md-6 contact-left">
+                        <h3 class="section-title-2 text-uppercase font-weight-300"><b>Our</b> <span class="red-text">Information</span></h3>
+                        <p class="margin-bottom-30">Proin gravida arcu malesuada, venenatis nisl vitae, egestas sem. Vestibulum mauris magna, aliquam non commodo ac, porttitor a augue.</p>
+                        <div class="contact-point">
+                            <i class="fa fa-map-marker fa-3x contact-point-icon red-text"></i>
+                            <div class="contact-point-detail-container">
+                                <b class="text-uppercase contact-point-title red-text font-weight-700">Address</b>
+                                <p class="contact-point-detail">No. 1234, Rama IX Road, Bangkok 12345, Thailand.</p>
+                            </div>
+                        </div>
+                        <div class="contact-point">
+                            <i class="fa fa-envelope-o fa-3x contact-point-icon red-text"></i>
+                            <div class="contact-point-detail-container">
+                                <b class="text-uppercase contact-point-title red-text font-weight-700">Email</b>
+                                <p class="contact-point-detail">mail@company.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-point">
+                            <i class="fa fa-phone fa-3x contact-point-icon red-text"></i>
+                            <div class="contact-point-detail-container">
+                                <b class="text-uppercase contact-point-title red-text font-weight-700">Phone</b>
+                                <p class="contact-point-detail">+(86) 123 4567 8901</p>
+                            </div>
+                       </div>
+                        <div class="contact-point">
+                            <i class="fa fa-fax fa-3x contact-point-icon red-text"></i>
+                            <div class="contact-point-detail-container">
+                                <b class="text-uppercase contact-point-title red-text font-weight-700">Fax</b>
+                                <p class="contact-point-detail">+(86) 123 4567 8901</p>
+                            </div>
+                       </div>
+                        <div class="contact-point">
+                            <i class="fa fa-weixin fa-3x contact-point-icon red-text"></i>
+                            <div class="contact-point-detail-container">
+                                <b class="text-uppercase contact-point-title red-text font-weight-700">WeChat</b>
+                                <p class="contact-point-detail">+(86) 123 4567 8901</p>
+                            </div>
+                       </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 contact-right">
+			 				<h3 class="section-title-2 text-uppercase font-weight-300"><b>CONTACT</b></h3>
+			 				<form action="" method='post'>
+			 						{% csrf_token %}
+									{{ form }}
+								<input type="submit" value="SEND">
+							</form>
+                    </div>
+
+         <div class="address">
+            <div class="col-lg-12">
+                <div class="google-map-container">
+                   <div id="google-map" class="google-map"></div>
+                </div>
+            </div>
+         </div>
+	 </div>
+</div>
+<!--fotter-->
+{% include 'footer.html' %}
+<!---fotter/-->
+{% include 'rightreserved.html' %}
+</div>
+<!---->
+<!---->
+<script type="text/javascript">
+		$(document).ready(function() {
+				/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+				*/
+		$().UItoTop({ easingType: 'easeOutQuart' });
+});
+</script>
+<script>
+            /* Google map
+            ------------------------------------------------*/
+            var map = '';
+            var center;
+
+            function initialize() {
+                var mapOptions = {
+                  zoom: 16,
+                  center: new google.maps.LatLng(36.3249224,119.98303),
+                  scrollwheel: false
+                };
+
+                map = new google.maps.Map(document.getElementById('google-map'),  mapOptions);
+
+                google.maps.event.addDomListener(map, 'idle', function() {
+                    calculateCenter();
+                });
+
+                google.maps.event.addDomListener(window, 'resize', function() {
+                    map.setCenter(center);
+                });
+            }
+
+            function calculateCenter() {
+              center = map.getCenter();
+            }
+
+            function loadGoogleMap(){
+                var script = document.createElement('script');
+                script.type = 'text/javascript';
+                script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' + 'callback=initialize';
+                document.body.appendChild(script);
+            }
+            $(document).ready(function(){
+                loadGoogleMap();
+            });
+        </script>
+<a href="#to-top" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+
+
+
+</body>
+</html>

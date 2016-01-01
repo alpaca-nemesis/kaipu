@@ -1,0 +1,90 @@
+<div class="header">  
+	  <div class="container">
+		  <div class="logo">
+				<a href="{% url 'index' %}"> <img src="/static/images/logo.png" title="soup" /></a>
+		 </div>
+		 <!---start-top-nav---->
+		 <div class="top-menu">
+			  <ul>            
+					<li><a href="{% url 'index' %}">HOME</a></li>
+               <li><a href="{% url 'profile' %}">PROFILES</a></li>   
+               <li><a href="{% url 'certif' %}">CERTIFICATIONS</a></li>   
+               <li><a href="{% url 'product' %}">PRODUCTS</a></li>   
+               <li><a href="{% url 'video' %}">VIDEOS</a></li>   
+               <li><a href="{% url 'news' %}">NEWS</a></li>                
+               <li><a href="{% url 'contact' %}">CONTACT</a></li> 		
+					<div class="clearfix"> </div>
+			 </ul>
+		 </div>
+		 <div class="clearfix"></div>
+				<script>
+				$("span.menu").click(function(){
+				$(".top-menu ul").slideToggle("slow" , function(){
+				});
+				});
+				</script>
+			<!---//End-top-nav---->					
+	 </div>
+ </div>
+
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" 
+   aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" 
+               aria-hidden="true">×
+            </button>
+            <h4 class="modal-title" id="myModalLabel">
+            	Log in
+            </h4>
+         </div>
+         <div class="modal-body">
+         	<form action="{% url 'login' %}" method="post">
+			 	{% csrf_token %}
+				{{ form1 }}
+
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default" 
+               data-dismiss="modal">Close
+            </button>
+            <button type="submit" class="btn btn-primary">
+               Submit
+            </button>
+         </div>
+         	</form>
+         </div>
+      </div><!-- /.modal-content -->
+   </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" id="signinModal" tabindex="-1" role="dialog" 
+   aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" 
+               aria-hidden="true">×
+            </button>
+            <h4 class="modal-title" id="myModalLabel">
+            	Sign in
+            </h4>
+         </div>
+         <div class="modal-body">
+         	<form action="{% url 'regist' %}" method="post">
+			 	{% csrf_token %}
+				{{ form2 }}
+
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default" 
+               data-dismiss="modal">Close
+            </button>
+            <button type="submit" class="btn btn-primary">
+               Submit
+            </button>
+         </div>
+         	</form>
+         </div>
+      </div><!-- /.modal-content -->
+   </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
