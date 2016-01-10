@@ -10,57 +10,33 @@
 	 </div>
 </div>
 <!---//End-banner---->
-<div class="terms">
+<div class="content">
 	 <div class="container">
-	 	<div class="col-md-9">
-		  <div class="terms-sec-head">
-				<h3>TERMS & CONDITIONS</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quis lectus et aliquam. Morbi lobortis tincidunt est, nec sodales quam condimentum a. Integer sollicitudin ornare molestie. Nam vel ligula tincidunt, rutrum lorem ac, euismod leo. Nam ac placerat mauris. Maecenas in accumsan purus, vel facilisis mauris. Cras ac odio metus. Etiam vel congue est, malesuada vulputate lectus.</p>
-		  </div> 
-			{% autoescape off %}
-			{% for pr in products %}
-		  		<div class='term'>
-			 		<h4><a href="{% url 'products' pr.id %}">{{  pr.name }}</a></h4>
-			 		<p>{{  pr.content }}</p>
-		  		</div>
-			{% endfor %}
-			{% endautoescape %}
-		</div>
-		
+		 <div class="content-grids">
+			 <div class="col-md-9 content-main">
+			 	<h2>ABOUT US</h2>
+			 	<br />
+			 	<p>Qingdao Kaipu Agricultural Equipment Co., Ltd. is a manufacturer which specializes in large machinery for chili stem cutting. Our company has invented the first chili stem cutting machine in China and owns various related utility patents. The products of Kaipu rank first in Chinese market of large machinery for cutting chili stem. "Eager Beave" which is our registered trademark has been widely accepted and trusted in the whole market.</p>
+			 	<img src="">
+			 	<br />
+			 	<p>We adhere to the philosophy that "liberating your hands to improve efficiency" and continuously promote the capability of research and development. The cutting machines for the base, stem or straw of agricultural products (especially for fruits, ears or flowers) have been developed successfully and they are widely used in various sectors to improve efficiency and create great social benefits.</p>
+			 	<br />
+			 	<p>As the main products of our company, the models G-2D670, G-2D800, G-2D1000 of chili stem cutters have good reputation in the market, which can process Indian S17, S12, S4, long chili, thorns chili, capsicum, broad chili, etc. The machines can cut large quantity of chili at one time with high efficiency. These machines equivalent to 40-120 manual labor and they are popular among enterprises and users in the field of farming, warehousing, medicine drugs and food producing, etc.</p>
+			 	<br />
+			 	<p>We currently have standard workshops covering an area of 100 square meters with 26 sets of dedicated production devices, 10 outsourcing enterprises and the annual capacity of 2,000 sets of products. Our customers are distributed from the areas of chili production, processing and trade and our products are exported to India and Mexico, etc.</p>
+			 	<br />
+			 	<p>Our company own a professional R&D team with 10 professionals and have a close cooperative relationship with Xi`an Jiaotong University and Qingdao Agricultural University which provide strong technical support for research and development.</p>
+			 	<br />
+			 	<p>In the future, our company will consistently focus on the technical demands of agricultural equipment and engage in the research and development of processing devices of bulk farm products. We also adhere to the principles that quality is fundament and innovation is spirit to build the best brand of cutting machines for stems and straw stalk.</p>
+			 </div>
+			 
+			 
 			{% include 'bread.html' %}
-		 <!-- <div class="term">
-				<h4>1)&nbsp; Sign up to receive email newsletters</h4>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quis lectus et aliquam. Morbi lobortis tincidunt est, nec sodales quam condimentum a. Integer sollicitudin ornare molestie. Nam vel ligula tincidunt, rutrum lorem ac, euismod leo. Nam ac placerat mauris. Maecenas in accumsan purus, vel facilisis mauris. Cras ac odio metus. Etiam vel congue est, malesuada vulputate lectus.</p>
-		 </div>	
-		 <div class="term">
-				<h4>2)&nbsp; The Fundamental Parts of a Blog</h4>
-				<p>Curabitur tempus leo ipsum, nec pulvinar arcu lacinia a. In pretium in tortor vel dictum. Integer porttitor ante vitae finibus porttitor. Praesent elementum tellus at orci posuere, eu imperdiet risus tincidunt. Nunc arcu justo, semper at orci ac, condimentum viverra ligula.</p>
-		 </div>	
-		 <div class="term">
-				<h4>3)&nbsp; Register.</h4>
-				<p>When we send newsletters to subscribers we may allow advertisers or partners to include messages in those newsletters, or we may send dedicated newsletters on behalf of those advertisers or partners. To unsubscribe from a particular newsletter, click the "unsubscribe" link at the bottom of that email newsletter. If you would like to globally opt-out from ALL About.com email campaigns please send an with "Unsubscribe" in the subject line.</p>
+			 <div class="clearfix"></div>
 		 </div>
-			<div class="term">
-				<h4>4)&nbsp; Illegal activities</h4>
-				<p> Do not use Blogger to engage in illegal activities or to promote dangerous and illegal activities. For example, don't author a blog encouraging people to drink and drive. Please also do not use Blogger to sell or promote illegal drugs. Otherwise, we may delete your content. Also, in serious cases such as those involving the abuse of children, we may report you to the appropriate authorities.</p>
-		 </div>
-		 <div class="term">
-				<h4>5)&nbsp; Spam</h4>
-				<p>Curabitur tempus leo ipsum, nec pulvinar arcu lacinia a. In pretium in tortor vel dictum. Integer porttitor ante vitae finibus porttitor. Praesent elementum tellus at orci posuere, eu imperdiet risus tincidunt. Nunc arcu justo, semper at orci ac, condimentum viverra ligula..</p>
-		 </div>
-		 <div class="term">
-				<h4>6)&nbsp; Enforcement of Blogger's Content Policy</h4>
-				<p>Aenean sagittis finibus quam, eget lobortis felis varius quis. Phasellus nibh metus, pretium vitae nisi in, cursus cursus ex. Sed eget lorem sit amet dui finibus iaculis. Nulla a turpis turpis. Integer ut molestie nisl, ac dapibus dui. Nullam porttitor tincidunt porttitor. Integer vel arcu quis ex consequat maximus.</p>
-				<li class="list">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-				<li>Etiam nec nibh et nulla hendrerit laoreet et convallis arcu.</li>
-				<li>Suspendisse porta elit at mauris mattis suscipit.</li>
-				<li>Proin a dolor et tellus ullamcorper aliquam.</li>
-				<li>Etiam nec nibh et nulla hendrerit laoreet et convallis arcu.</li>
-				<li>Vivamus vehicula nibh nec urna malesuada porta.</li>
-		 </div>
-		 <input type="checkbox"><p class="agree">I have read and agree to these terms and conditons</p>
-		 <div class="clearfix"></div>
-		 <input type="button" value="Continue"> -->
+	</div>
+		
+		
 	 </div>
 </div>
 <!--fotter-->

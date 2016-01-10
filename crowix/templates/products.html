@@ -10,17 +10,24 @@
 	 </div>
 </div>
 <!---//End-banner---->
-<div class="terms">
-	 <div class="container">
+<div class="content">
+	<div class="container">
+		 <div class="content-grids">
+			 <div class="col-md-9 content-main">
+			 	
 			{% autoescape off %}
-			<div class="col-md-9 ">
-		  	<div class="terms-sec-head">
-			 	<h3>{{  pro.name }}<</h3>
+			 	<h3>{{  pro.name }}</h3>
+			 	<br />
 			 	<p>{{  pro.content }}</p>
-		  	</div>
-		  </div>
 			{% endautoescape %}
+<iframe height=498 width=910 src="http://player.youku.com/embed/XMTQzNjM5NzQ4NA==" frameborder=0 allowfullscreen></iframe>
+			 </div>
+			 
+			 
 			{% include 'bread.html' %}
+			 <div class="clearfix"></div>
+		 </div>
+	</div>
 
 		 <!-- <div class="term">
 				<h4>1)&nbsp; Sign up to receive email newsletters</h4>

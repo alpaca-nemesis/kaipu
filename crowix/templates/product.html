@@ -10,18 +10,21 @@
 	 </div>
 </div>
 <!---//End-banner---->
-<div class="terms">
+<div class="content">
 	 <div class="container">
+	 	
 	 	<div class="col-md-9">
 		  <div class="terms-sec-head">
+		  	<br />
 				<h3>TERMS & CONDITIONS</h3>
+				<br />
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quis lectus et aliquam. Morbi lobortis tincidunt est, nec sodales quam condimentum a. Integer sollicitudin ornare molestie. Nam vel ligula tincidunt, rutrum lorem ac, euismod leo. Nam ac placerat mauris. Maecenas in accumsan purus, vel facilisis mauris. Cras ac odio metus. Etiam vel congue est, malesuada vulputate lectus.</p>
 		  </div> 
 			{% autoescape off %}
 			{% for pr in products %}
 		  		<div class='term'>
 			 		<h4><a href="{% url 'products' pr.id %}">{{  pr.name }}</a></h4>
-			 		<p>{{  pr.content }}</p>
+			 		<p>{{  pr.abstract }}</p>
 		  		</div>
 			{% endfor %}
 			{% endautoescape %}
