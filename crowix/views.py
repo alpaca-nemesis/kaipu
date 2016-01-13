@@ -4,7 +4,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render,render_to_response
 from django.contrib import auth
 from django.contrib.auth.models import User
-from .models import artical,product,message
+from .models import artical,product,message,news
 from .forms import messageForm,loginForm,userForm
 
 
@@ -62,10 +62,25 @@ def certif_page(request):
 		})
 	
 def news_page(request):
+	newss = news.objects.exclude(name="*")
 	f1 = loginForm()
 	f2 = userForm()
 	return render(request, 'news.html',{
 		'request': request,
+		'newss': newss,
+		'form1': f1,
+		'form2': f2,
+		})
+
+
+def news_pages(request,id_1):
+	pro = news.objects.filter(id=id_1)
+	f1 = loginForm()
+	f2 = userForm()
+	return render(request, 'newss.html',{
+		'request': request,
+		'pro': pro[0],
+		'id': id_1,
 		'form1': f1,
 		'form2': f2,
 		})
