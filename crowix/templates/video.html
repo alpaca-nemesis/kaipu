@@ -3,7 +3,7 @@
 	 {% include 'head.html' %}
 <body>
 <!---strat-banner---->
-<div class="banner">		 
+<div class="banner">			
 	 {% include 'header.html' %}
 	 <div class="container">
 		 {% include 'bannerhead.html' %}	
@@ -12,43 +12,76 @@
 <!---//End-banner---->
 <div class="content">
 	 <div class="container">
+		 <div class="banner-links">
+			 <ul>
+				 <li id="a1" class="active"><a>Video1</a></li>
+				 <li id="a2"><a>Videol2</a></li>
+				 <li id="a3"><a>Videol3</a></li>
+				 <div class="clearfix"></div>
+			 </ul>
+		 </div>
 		 <div class="content-grids">
 			 <div class="col-md-9 content-main">
-			 	<h2>ABOUT US</h2>
-			 	<br />
-			 	<p>Qingdao Kaipu Agricultural Equipment Co., Ltd. is a manufacturer which specializes in large machinery for chili stem cutting. Our company has invented the first chili stem cutting machine in China and owns various related utility patents. The products of Kaipu rank first in Chinese market of large machinery for cutting chili stem. "Eager Beave" which is our registered trademark has been widely accepted and trusted in the whole market.</p>
-			 	<img src="">
-			 	<br />
-			 	<p>We adhere to the philosophy that "liberating your hands to improve efficiency" and continuously promote the capability of research and development. The cutting machines for the base, stem or straw of agricultural products (especially for fruits, ears or flowers) have been developed successfully and they are widely used in various sectors to improve efficiency and create great social benefits.</p>
-			 	<br />
-			 	<p>As the main products of our company, the models G-2D670, G-2D800, G-2D1000 of chili stem cutters have good reputation in the market, which can process Indian S17, S12, S4, long chili, thorns chili, capsicum, broad chili, etc. The machines can cut large quantity of chili at one time with high efficiency. These machines equivalent to 40-120 manual labor and they are popular among enterprises and users in the field of farming, warehousing, medicine drugs and food producing, etc.</p>
-			 	<br />
-			 	<p>We currently have standard workshops covering an area of 100 square meters with 26 sets of dedicated production devices, 10 outsourcing enterprises and the annual capacity of 2,000 sets of products. Our customers are distributed from the areas of chili production, processing and trade and our products are exported to India and Mexico, etc.</p>
-			 	<br />
-			 	<p>Our company own a professional R&D team with 10 professionals and have a close cooperative relationship with Xi`an Jiaotong University and Qingdao Agricultural University which provide strong technical support for research and development.</p>
-			 	<br />
-			 	<p>In the future, our company will consistently focus on the technical demands of agricultural equipment and engage in the research and development of processing devices of bulk farm products. We also adhere to the principles that quality is fundament and innovation is spirit to build the best brand of cutting machines for stems and straw stalk.</p>
+			 	<div id="arti1">
+			 		<center>
+			 			<iframe width="560" height="315" src="https://www.youtube.com/embed/wyslGHOgQ_M" frameborder="0" allowfullscreen></iframe>
+			 		</center>
+			 	</div>
+			 	<div id="arti2">
+			 		<center>
+						<iframe width="560" height="420" src="https://www.youtube.com/embed/2f1dnzJnRPw" frameborder="0" allowfullscreen></iframe>
+					</center>
+			 	</div>
+			 	<div id="arti3">
+			 		<center>
+			 			<iframe width="560" height="420" src="https://www.youtube.com/embed/-jrAKmV5bRM" frameborder="0" allowfullscreen></iframe>
+			 			<iframe width="560" height="420" src="https://www.youtube.com/embed/DOzhDEizR3M" frameborder="0" allowfullscreen></iframe>
+			 		</center>
+			 	</div>
 			 </div>
 			 
 			 
 			{% include 'bread.html' %}
 			 <div class="clearfix"></div>
 		 </div>
-	</div>
-		
-		
 	 </div>
 </div>
 <!--fotter-->
-{% include 'footer.html' %}
-{{request.user.is_authenticated}}
+<div class="fotter">
+	 <div class="container">
+		 <div class="col-md-4 fotter-info">
+			 <h3>INTEGER VITAE LIBERO</h3>
+			 <p>Raesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. </p>
+			 <p>Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus. Phasellus ultrices nulla quis nibh. Quisque a lectus. </p>
+		 </div>
+		 <div class="col-md-4 fotter-list">
+			 <h3>VESTIBULUM COMMO</h3>
+			 <ul>
+			 <li><a href="#">Ut alliquam solicitudin</a></li>
+			 <li><a href="#">Neque id cursus faucibus</a></li>
+			 <li><a href="#">Raesent dapibus neque id cursus</a></li>
+			 </ul>
+		 </div>
+		 <div class="col-md-4 fotter-media">
+				<h3>FOLLOW US ON....</h3>
+				 <div class="social-icons">
+				 <a href="#"><span class="fb"> </span></a>
+				 <a href="#"><span class="twt"> </span></a>
+				 <a href="#"><span class="in"> </span></a>				 			 
+			    </div>
+		 </div>
+		 <div class="clearfix"></div>
+	 </div>
+</div>
 <!---fotter/-->
 {% include 'rightreserved.html' %}
 </div>
 <!---->
-<!---->
 <script type="text/javascript">
 		$(document).ready(function() {
+			$("#arti1").show();
+			$("#arti2").hide();
+			$("#arti3").hide();
 				/*
 				var defaults = {
 				containerID: 'toTop', // fading element id
@@ -57,9 +90,35 @@
 				easingType: 'linear' 
 				};
 				*/
+		$("#a1").click(function(){
+			$("#a1").addClass("active");
+			$("#a2").removeClass("active");
+			$("#a3").removeClass("active");
+			$("#arti1").show();
+			$("#arti2").hide();
+			$("#arti3").hide();
+		})
+		$("#a2").click(function(){
+			$("#a1").removeClass("active");
+			$("#a2").addClass("active");
+			$("#a3").removeClass("active");
+			$("#arti1").hide();
+			$("#arti2").show();
+			$("#arti3").hide();
+		})
+		$("#a3").click(function(){
+			$("#a1").removeClass("active");
+			$("#a2").removeClass("active");
+			$("#a3").addClass("active");
+			$("#arti1").hide();
+			$("#arti2").hide();
+			$("#arti3").show();
+		})
 		$().UItoTop({ easingType: 'easeOutQuart' });
 });
 </script>
+
+
 <a href="#to-top" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 
 
